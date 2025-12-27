@@ -43,10 +43,6 @@ jobs:
           # Optional: Give a custom prompt to Claude. If this is not specified, Claude will perform the instructions specified in the comment that tagged it.
           # prompt: 'Update the pull request description to include a summary of changes.'
 
-          # Optional: Add allowed_tools to customize behavior
-          # See https://github.com/anthropics/claude-code-action/blob/main/docs/usage.md
-          allowed_tools: |
-            Bash(gh issue:*)
-            Bash(gh pr:*)
-            Bash(gh repo:*)
+          # Allow gh CLI commands without approval
+          claude_args: '--allowedTools "Bash(gh issue:*)" --allowedTools "Bash(gh pr:*)" --allowedTools "Bash(gh repo:*)"'
 
